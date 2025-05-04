@@ -7,6 +7,7 @@ interface Product {
   name: string;
   price: number;
   description: string;
+  cartId: string;
 }
 
 interface CheckoutFormProps {
@@ -64,7 +65,7 @@ export default function CheckoutForm({ cart, onBack }: CheckoutFormProps) {
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-2">Resumen del Carrito</h3>
         {cart.map((item) => (
-          <div key={item.id} className="flex justify-between mb-2">
+          <div key={item.cartId} className="flex justify-between mb-2">
             <span>{item.name}</span>
             <span>
               {new Intl.NumberFormat('es-PY', {

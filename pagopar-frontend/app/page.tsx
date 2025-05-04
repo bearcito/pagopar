@@ -30,7 +30,7 @@ export default function Home() {
   ];
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    setCart([...cart, { ...product, cartId: Date.now() + Math.random() }]);
   };
 
   return (
